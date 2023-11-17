@@ -12,10 +12,15 @@ class TeacherDashBoardScreen extends StatelessWidget {
       color: const Color.fromARGB(255, 240, 241, 243),
       child: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextFontWidget(
-              text: "Welcome Teacher ",
-              fontsize: 20,
+            Padding(
+              padding: const EdgeInsets.only(left: 50, top: 50),
+              child: TextFontWidget(
+                text: "Welcome Teacher ",
+                fontsize: 25,
+                fontWeight: FontWeight.bold,
+              ),
             )
           ],
         ),
