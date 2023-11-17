@@ -1,6 +1,7 @@
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/fonts/text_widget.dart';
 import 'package:dash_board/view/pages/home/sections/exam_status/exam_status_graph.dart';
+import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 
 class ExamStatusContainer extends StatelessWidget {
@@ -9,7 +10,7 @@ class ExamStatusContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 600,
+      height: ResponsiveWebSite.isMobile(context) ? 420 : 500,
       width: double.infinity,
       decoration: BoxDecoration(
           color: cWhite, border: Border.all(color: cBlack.withOpacity(0.1))),
@@ -24,10 +25,10 @@ class ExamStatusContainer extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(
-            height: 500,
+          SizedBox(
+            height: ResponsiveWebSite.isMobile(context) ? 300 : 400,
             width: double.infinity,
-            child: ExamStatusGraph(),
+            child: const ExamStatusGraph(),
           ),
           SizedBox(
               height: 50,

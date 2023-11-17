@@ -1,6 +1,7 @@
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/fonts/text_widget.dart';
 import 'package:dash_board/view/pages/home/sections/attendence/student_attendence_graph.dart';
+import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 
 class TotalStudentAttendanceContainer extends StatelessWidget {
@@ -9,8 +10,8 @@ class TotalStudentAttendanceContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
-      width: 500,
+      height: ResponsiveWebSite.isMobile(context) ? 320 : 420,
+      width: ResponsiveWebSite.isMobile(context) ? double.infinity : 400,
       decoration: BoxDecoration(
           color: cWhite, border: Border.all(color: cBlack.withOpacity(0.1))),
       child: Column(
@@ -20,13 +21,13 @@ class TotalStudentAttendanceContainer extends StatelessWidget {
             padding: const EdgeInsets.only(top: 25, left: 20),
             child: TextFontWidget(
               text: "Student Attendance",
-              fontsize: 17,
+              fontsize: ResponsiveWebSite.isMobile(context) ? 12 : 17,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(
-            height: 400,
-            child: StudentsAttendenceCircleGraph(),
+          SizedBox(
+            height: ResponsiveWebSite.isMobile(context) ? 220 : 310,
+            child: const StudentsAttendenceCircleGraph(),
           ),
           SizedBox(
               height: 50,

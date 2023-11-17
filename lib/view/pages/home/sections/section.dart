@@ -4,6 +4,7 @@ import 'package:dash_board/view/pages/home/sections/attendence/total_students_at
 import 'package:dash_board/view/pages/home/sections/exam_status/exam_status.dart';
 import 'package:dash_board/view/pages/home/sections/totalStudent_graph/totalStudent.dart';
 import 'package:dash_board/view/pages/home/sections/total_members/total_members_section.dart';
+import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 
 class DashBoardSections extends StatelessWidget {
@@ -21,51 +22,71 @@ class DashBoardSections extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 25),
+                padding: const EdgeInsets.only(left: 25, top: 25),
                 child: TextFontWidget(
                   text: 'Admin Dashboard',
                   fontsize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 25, left: 30),
-                child: TotalMembersSection(),
+              Padding(
+                padding: EdgeInsets.only(
+                    top: 25,
+                    left: ResponsiveWebSite.isMobile(context) ? 05 : 10),
+                child: const TotalMembersSection(),
 
                 ///.............. Total Members Section
               ),
-              const Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 30, top: 20, right: 10),
-                    child: SizedBox(
-                      height: 500,
-                      width: 500,
-                      child:
-                          TotalStudentAttendanceContainer(), /////////....................Students Attendance
+              ResponsiveWebSite.isMobile(context)
+                  ? const Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 10,
+                          ),
+                          child: TotalStudentAttendanceContainer(),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 10,
+                          ),
+                          child:
+                              OthersTodayAttendanceContainer(), /////////........ Others --- Attendance
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 10, right: 0, left: 0),
+                          child: TotalStudentContainer(),
+                        ),
+                      ],
+                    )
+                  : const SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsets.only(top: 10, right: 0, left: 10),
+                            child: TotalStudentAttendanceContainer(),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsets.only(top: 10, right: 0, left: 10),
+                            child:
+                                OthersTodayAttendanceContainer(), /////////........ Others --- Attendance
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsets.only(top: 10, right: 0, left: 10),
+                            child: TotalStudentContainer(),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, top: 20, right: 10),
-                    child:
-                        OthersTodayAttendanceContainer(), /////////........ Others --- Attendance
-                  ),
-                  Expanded(
-                      child: Padding(
-                    padding: EdgeInsets.only(left: 30, top: 20, right: 15),
-                    child: SizedBox(
-                      height: 500,
-                      child: TotalStudentContainer(),
-                    ),
-                  ))
-                ],
-              ),
               const Padding(
-                padding: EdgeInsets.only(left: 30, top: 20, right: 10),
-                child: SizedBox(
-                  height: 600,
-                  child: ExamStatusContainer(),
+                padding: EdgeInsets.only(
+                  top: 10,
                 ),
+                child: ExamStatusContainer(),
               ),
             ],
           ),

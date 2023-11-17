@@ -1,6 +1,7 @@
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/fonts/text_widget.dart';
 import 'package:dash_board/view/pages/home/sections/totalStudent_graph/totalstudents_graph.dart';
+import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 
 class TotalStudentContainer extends StatelessWidget {
@@ -9,23 +10,22 @@ class TotalStudentContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: ResponsiveWebSite.isMobile(context) ? 320 : 420,
       decoration: BoxDecoration(
           color: cWhite, border: Border.all(color: cBlack.withOpacity(0.1))),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 25, left: 20),
+            padding: const EdgeInsets.only(top: 20, right: 0),
             child: TextFontWidget(
               text: "Students",
-              fontsize: 17,
+              fontsize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(
-            height: 400,
-            child: TotalStudentCircleGraph(),
+          SizedBox(
+            height: ResponsiveWebSite.isMobile(context) ? 200 : 300,
+            child: const TotalStudentCircleGraph(),
           ),
           SizedBox(
               height: 50,

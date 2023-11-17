@@ -1,6 +1,10 @@
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/fonts/google_poppins.dart';
 import 'package:dash_board/view/fonts/text_widget.dart';
+import 'package:dash_board/view/pages/home/app_bar/responsive_Show_dilogues/admin_profile_Box.dart';
+import 'package:dash_board/view/pages/home/app_bar/responsive_Show_dilogues/mail_show_dil_Box.dart';
+import 'package:dash_board/view/pages/home/app_bar/responsive_Show_dilogues/notification_show_dil_Box.dart';
+import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebar_drawer/sidebar_drawer.dart';
 
@@ -58,7 +62,6 @@ class _AppBarAdminPanelState extends State<AppBarAdminPanel> {
       child: Container(
         color: Colors.white24,
         height: 70,
-        
         width: double.infinity,
         child: Row(
           children: [
@@ -104,7 +107,9 @@ class _AppBarAdminPanelState extends State<AppBarAdminPanel> {
                       IconButton(
                           focusNode: textButtonFocusNode2,
                           onPressed: () {
-                            textButtonFocusNode2.requestFocus();
+                            ResponsiveWebSite.isDesktop(context)
+                                ? textButtonFocusNode2.requestFocus()
+                                : appBarAdminBox(context);
                             showOverlay = true;
                           },
                           icon: const Icon(
@@ -138,7 +143,9 @@ class _AppBarAdminPanelState extends State<AppBarAdminPanel> {
                             focusNode: textButtonFocusNode,
                             onPressed: () {
                               // if (val) {
-                              textButtonFocusNode.requestFocus();
+                              ResponsiveWebSite.isDesktop(context)
+                                  ? textButtonFocusNode.requestFocus()
+                                  : appBarMailBox(context);
                               showOverlay = true;
                               // }
                             },
@@ -181,8 +188,11 @@ class _AppBarAdminPanelState extends State<AppBarAdminPanel> {
                         child: IconButton(
                             focusNode: textButtonFocusNode1,
                             onPressed: () {
-                              textButtonFocusNode1.requestFocus();
                               showOverlay = true;
+                              //.................... Notification
+                              ResponsiveWebSite.isDesktop(context)
+                                  ? textButtonFocusNode1.requestFocus()
+                                  : appBarNotificationBox(context);
                             },
                             icon: Icon(
                               Icons.notifications_none_outlined,
@@ -212,47 +222,47 @@ class _AppBarAdminPanelState extends State<AppBarAdminPanel> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 05),
-              child: SizedBox(
-                width: 86,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.south_america,
-                          color: Colors.amber,
-                        ),
-                        GooglePoppinsWidgets(text: ' EN ', fontsize: 12),
-                        PopupMenuButton(
-                          icon: const Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: cBlack,
-                            size: 17,
-                          ),
-                          itemBuilder: (BuildContext context) {
-                            return <PopupMenuEntry>[
-                              PopupMenuItem(
-                                  child: Column(
-                                children: [
-                                  Container(
-                                    height: 400,
-                                    color: Colors.red,
-                                  ),
-                                ],
-                              ))
-                            ];
-                          },
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 05),
+            //   child: SizedBox(
+            //     width: 86,
+            //     child: Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       crossAxisAlignment: CrossAxisAlignment.end,
+            //       children: [
+            //         Row(
+            //           children: [
+            //             const Icon(
+            //               Icons.south_america,
+            //               color: Colors.amber,
+            //             ),
+            //             GooglePoppinsWidgets(text: ' EN ', fontsize: 12),
+            //             PopupMenuButton(
+            //               icon: const Icon(
+            //                 Icons.keyboard_arrow_down_rounded,
+            //                 color: cBlack,
+            //                 size: 17,
+            //               ),
+            //               itemBuilder: (BuildContext context) {
+            //                 return <PopupMenuEntry>[
+            //                   PopupMenuItem(
+            //                       child: Column(
+            //                     children: [
+            //                       Container(
+            //                         height: 400,
+            //                         color: Colors.red,
+            //                       ),
+            //                     ],
+            //                   ))
+            //                 ];
+            //               },
+            //             ),
+            //           ],
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

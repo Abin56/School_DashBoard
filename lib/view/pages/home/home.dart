@@ -23,7 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: SidebarDrawer(
             body: ListView(
-              children: [const AppBarAdminPanel(), pages[selectedIndex]],
+              children: [
+                const AppBarAdminPanel(),
+                pages[selectedIndex],
+              ],
             ),
             drawer: Container(
               color: cWhite,
