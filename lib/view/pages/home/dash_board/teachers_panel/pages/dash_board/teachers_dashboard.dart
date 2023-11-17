@@ -14,7 +14,7 @@ class TeacherDashBoardScreen extends StatelessWidget {
         child: Column(
           children: [
             TextFontWidget(
-              text: "Teachers ",
+              text: "Welcome Teacher ",
               fontsize: 20,
             )
           ],
