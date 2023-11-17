@@ -8,16 +8,16 @@ import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebar_drawer/sidebar_drawer.dart';
 
-class AppBarAdminPanel extends StatefulWidget {
-  const AppBarAdminPanel({
+class AppBarStudentPanel extends StatefulWidget {
+  const AppBarStudentPanel({
     super.key,
   });
 
   @override
-  State<AppBarAdminPanel> createState() => _AppBarAdminPanelState();
+  State<AppBarStudentPanel> createState() => _AppBarStudentPanelState();
 }
 
-class _AppBarAdminPanelState extends State<AppBarAdminPanel> {
+class _AppBarStudentPanelState extends State<AppBarStudentPanel> {
   OverlayState? overlayState;
   OverlayEntry? overlayEntry;
   OverlayEntry? overlayEntry2;
