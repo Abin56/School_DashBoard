@@ -1,14 +1,14 @@
 import 'package:dash_board/view/fonts/text_widget.dart';
-import 'package:dash_board/view/pages/home/sections/attendence/others/others_attendence.dart';
-import 'package:dash_board/view/pages/home/sections/attendence/total_students_attendence.dart';
-import 'package:dash_board/view/pages/home/sections/exam_status/exam_status.dart';
-import 'package:dash_board/view/pages/home/sections/totalStudent_graph/totalStudent.dart';
-import 'package:dash_board/view/pages/home/sections/total_members/total_members_section.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/pages/dash_board/sections/attendence/others/others_attendence.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/pages/dash_board/sections/attendence/total_students_attendence.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/pages/dash_board/sections/exam_status/exam_status.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/pages/dash_board/sections/totalStudent_graph/totalStudent.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/pages/dash_board/sections/total_members/total_members_section.dart';
 import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 
-class DashBoardSections extends StatelessWidget {
-  const DashBoardSections({super.key});
+class AdminDashBoardSections extends StatelessWidget {
+  const AdminDashBoardSections({super.key});
 
   @override
   Widget build(BuildContext context) {
