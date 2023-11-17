@@ -80,14 +80,14 @@ class _AppBarAdminPanelState extends State<AppBarAdminPanel> {
             ),
             const Spacer(),
             SizedBox(
-              width: 107,
+              width: 109,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
                     children: [
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
+                       crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           const Text(
                             'Stevne Zone',
