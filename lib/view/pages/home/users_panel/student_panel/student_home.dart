@@ -1,9 +1,9 @@
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/constant/constant.dart';
 import 'package:dash_board/view/fonts/google_poppins.dart';
-import 'package:dash_board/view/pages/home/dash_board/student_panel/pages/dash_board/student_dashboard.dart';
-import 'package:dash_board/view/pages/home/dash_board/student_panel/student_appbar/student_appbar.dart';
-import 'package:dash_board/view/pages/home/drawer/drawer_pages.dart';
+import 'package:dash_board/view/pages/home/users_panel/student_panel/pages/dash_board/student_dashboard.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/drawer/drawer_pages.dart';
+import 'package:dash_board/view/pages/home/users_panel/student_panel/student_appBar/student_appBar.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebar_drawer/sidebar_drawer.dart';
 

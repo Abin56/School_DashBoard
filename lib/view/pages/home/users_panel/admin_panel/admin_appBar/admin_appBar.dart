@@ -1,23 +1,23 @@
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/fonts/google_poppins.dart';
 import 'package:dash_board/view/fonts/text_widget.dart';
-import 'package:dash_board/view/pages/home/app_bar/responsive_Show_dilogues/admin_profile_Box.dart';
-import 'package:dash_board/view/pages/home/app_bar/responsive_Show_dilogues/mail_show_dil_Box.dart';
-import 'package:dash_board/view/pages/home/app_bar/responsive_Show_dilogues/notification_show_dil_Box.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/admin_appBar/web_hover_dilogues/admin_profile_Box.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/admin_appBar/web_hover_dilogues/mail_show_dil_Box.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/admin_appBar/web_hover_dilogues/notification_show_dil_Box.dart';
 import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebar_drawer/sidebar_drawer.dart';
 
-class AppBarStudentPanel extends StatefulWidget {
-  const AppBarStudentPanel({
+class AppBarAdminPanel extends StatefulWidget {
+  const AppBarAdminPanel({
     super.key,
   });
 
   @override
-  State<AppBarStudentPanel> createState() => _AppBarStudentPanelState();
+  State<AppBarAdminPanel> createState() => _AppBarAdminPanelState();
 }
 
-class _AppBarStudentPanelState extends State<AppBarStudentPanel> {
+class _AppBarAdminPanelState extends State<AppBarAdminPanel> {
   OverlayState? overlayState;
   OverlayEntry? overlayEntry;
   OverlayEntry? overlayEntry2;
