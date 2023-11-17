@@ -1,6 +1,6 @@
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/fonts/text_widget.dart';
-import 'package:dash_board/view/pages/home/sections/attendence/others/others_attendence_graph.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/pages/dash_board/sections/attendence/others/others_attendence_graph.dart';
 import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 

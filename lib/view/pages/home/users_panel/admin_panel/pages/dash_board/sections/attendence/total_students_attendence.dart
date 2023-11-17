@@ -1,34 +1,33 @@
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/fonts/text_widget.dart';
-import 'package:dash_board/view/pages/home/sections/exam_status/exam_status_graph.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/pages/dash_board/sections/attendence/student_attendence_graph.dart';
 import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 
-class ExamStatusContainer extends StatelessWidget {
-  const ExamStatusContainer({super.key});
+class TotalStudentAttendanceContainer extends StatelessWidget {
+  const TotalStudentAttendanceContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ResponsiveWebSite.isMobile(context) ? 420 : 500,
-      width: double.infinity,
+      height: ResponsiveWebSite.isMobile(context) ? 320 : 420,
+      width: ResponsiveWebSite.isMobile(context) ? double.infinity : 400,
       decoration: BoxDecoration(
           color: cWhite, border: Border.all(color: cBlack.withOpacity(0.1))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 10, left: 20, bottom: 05),
+            padding: const EdgeInsets.only(top: 25, left: 20),
             child: TextFontWidget(
-              text: "Exam Results Analyser",
-              fontsize: 16,
+              text: "Student Attendance",
+              fontsize: ResponsiveWebSite.isMobile(context) ? 12 : 17,
               fontWeight: FontWeight.bold,
             ),
           ),
           SizedBox(
-            height: ResponsiveWebSite.isMobile(context) ? 300 : 400,
-            width: double.infinity,
-            child: const ExamStatusGraph(),
+            height: ResponsiveWebSite.isMobile(context) ? 220 : 310,
+            child: const StudentsAttendenceCircleGraph(),
           ),
           SizedBox(
               height: 50,
@@ -43,15 +42,15 @@ class ExamStatusContainer extends StatelessWidget {
                           padding: const EdgeInsets.only(right: 10),
                           child: Container(
                             height: 04,
-                            width: 60,
+                            width: 100,
                             color: const Color.fromARGB(255, 48, 79, 254),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 10, top: 05),
                           child: TextFontWidget(
-                            text: 'Total Students',
-                            fontsize: 11.5,
+                            text: 'Present',
+                            fontsize: 12.5,
                             color: Colors.black.withOpacity(0.8),
                           ),
                         ),
@@ -60,7 +59,7 @@ class ExamStatusContainer extends StatelessWidget {
                           child: TextFontWidget(
                             text: '500',
                             fontsize: 12,
-                            color: Colors.black.withOpacity(0.4),
+                            color: Colors.black.withOpacity(0.5),
                           ),
                         )
                       ],
@@ -75,15 +74,15 @@ class ExamStatusContainer extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 10),
                           child: Container(
                             height: 04,
-                            width: 60,
-                            color: const Color.fromARGB(255, 255, 166, 1),
+                            width: 100,
+                            color: const Color.fromARGB(255, 255, 0, 0),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 15, top: 05),
                           child: TextFontWidget(
-                            text: 'Pass Level',
-                            fontsize: 11.5,
+                            text: 'Absent',
+                            fontsize: 12.5,
                             color: Colors.black.withOpacity(0.8),
                           ),
                         ),
@@ -92,7 +91,7 @@ class ExamStatusContainer extends StatelessWidget {
                           child: TextFontWidget(
                             text: '500',
                             fontsize: 12,
-                            color: Colors.black.withOpacity(0.4),
+                            color: Colors.black.withOpacity(0.5),
                           ),
                         )
                       ],

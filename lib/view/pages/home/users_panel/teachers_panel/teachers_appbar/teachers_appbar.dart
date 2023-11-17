@@ -1,23 +1,23 @@
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/fonts/google_poppins.dart';
 import 'package:dash_board/view/fonts/text_widget.dart';
-import 'package:dash_board/view/pages/home/app_bar/responsive_Show_dilogues/admin_profile_Box.dart';
-import 'package:dash_board/view/pages/home/app_bar/responsive_Show_dilogues/mail_show_dil_Box.dart';
-import 'package:dash_board/view/pages/home/app_bar/responsive_Show_dilogues/notification_show_dil_Box.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/admin_appBar/web_hover_dilogues/admin_profile_Box.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/admin_appBar/web_hover_dilogues/mail_show_dil_Box.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/admin_appBar/web_hover_dilogues/notification_show_dil_Box.dart';
 import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebar_drawer/sidebar_drawer.dart';
 
-class AppBarAdminPanel extends StatefulWidget {
-  const AppBarAdminPanel({
+class AppBarTeachersPanel extends StatefulWidget {
+  const AppBarTeachersPanel({
     super.key,
   });
 
   @override
-  State<AppBarAdminPanel> createState() => _AppBarAdminPanelState();
+  State<AppBarTeachersPanel> createState() => _AppBarTeachersPanelState();
 }
 
-class _AppBarAdminPanelState extends State<AppBarAdminPanel> {
+class _AppBarTeachersPanelState extends State<AppBarTeachersPanel> {
   OverlayState? overlayState;
   OverlayEntry? overlayEntry;
   OverlayEntry? overlayEntry2;
@@ -87,7 +87,7 @@ class _AppBarAdminPanelState extends State<AppBarAdminPanel> {
                   Row(
                     children: [
                       Column(
-                       crossAxisAlignment: CrossAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           const Text(
                             'Stevne Zone',

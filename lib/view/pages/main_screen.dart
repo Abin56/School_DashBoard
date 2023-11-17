@@ -1,4 +1,4 @@
-import 'package:dash_board/view/pages/home/dash_board/teachers_panel/teachers_home.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/admin_home.dart';
 import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 
@@ -10,9 +10,9 @@ class MainScreen extends StatelessWidget {
     return const Scaffold(
       body: SafeArea(
           child: ResponsiveWebSite(
-              mobile: TeachersHomeScreen(),
-              tablet: TeachersHomeScreen(),
-              desktop: TeachersHomeScreen())),
+              mobile: AdminHomeScreen(),
+              tablet: AdminHomeScreen(),
+              desktop: AdminHomeScreen())),
     );
   }
 }

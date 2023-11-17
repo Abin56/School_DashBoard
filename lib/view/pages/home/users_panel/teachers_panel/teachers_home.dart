@@ -1,20 +1,20 @@
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/constant/constant.dart';
 import 'package:dash_board/view/fonts/google_poppins.dart';
-import 'package:dash_board/view/pages/home/app_bar/appBar.dart';
-import 'package:dash_board/view/pages/home/drawer/drawer_pages.dart';
-import 'package:dash_board/view/pages/home/sections/section.dart';
+import 'package:dash_board/view/pages/home/users_panel/teachers_panel/pages/dash_board/teachers_dashboard.dart';
+import 'package:dash_board/view/pages/home/users_panel/teachers_panel/teachers_appbar/teachers_appbar.dart';
+import 'package:dash_board/view/pages/home/users_panel/admin_panel/drawer/drawer_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebar_drawer/sidebar_drawer.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class TeachersHomeScreen extends StatefulWidget {
+  const TeachersHomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<TeachersHomeScreen> createState() => _TeachersHomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _TeachersHomeScreenState extends State<TeachersHomeScreen> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SidebarDrawer(
             body: ListView(
               children: [
-                const AppBarAdminPanel(),
+                const AppBarTeachersPanel(),
                 pages[selectedIndex],
               ],
             ),
@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 List<Widget> pages = [
-  const DashBoardSections(),
+  const TeacherDashBoardScreen(),
   Center(
     child: Text(sideMenu[1]),
   ),
