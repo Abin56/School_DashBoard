@@ -1,6 +1,5 @@
 
 import 'package:dash_board/view/fonts/text_widget.dart';
-import 'package:dash_board/view/pages/home/dash_board/student_panel/pages/dash_board/Student_widgets/details_container.dart';
 import 'package:flutter/material.dart';
 
 class StudentDashBoardScreen extends StatelessWidget {
@@ -36,10 +35,7 @@ class StudentDashBoardScreen extends StatelessWidget {
                 //   width: 330,
                 //   decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(20)),
                 // )
-                DetailsContainerWidget(imagepath: "assests/png/exam.png",  count: 04, title: "All Courses"),
-                 DetailsContainerWidget(imagepath: "assests/png/exam.png",  count: 04, title: "All Courses"),
-                 DetailsContainerWidget(imagepath: "assests/png/exam.png",  count: 04, title: "All Courses"),
-                 DetailsContainerWidget(imagepath: "assests/png/exam.png",  count: 04, title: "All Courses")
+        
               ],),
             )
 
