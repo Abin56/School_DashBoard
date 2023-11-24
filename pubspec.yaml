@@ -34,6 +34,7 @@ dependencies:
   flutter_screenutil:
   intl:
   fluttertoast:
+  flutter_svg: 
   provider:
   uuid:
   google_fonts:
@@ -46,10 +47,13 @@ dependencies:
   flutter_staggered_animations:
   popover:
   dropdown_search: 
+  percent_indicator: 
   sidebar_drawer:
   scroll_to_index:
   syncfusion_flutter_charts: 
   syncfusion_flutter_calendar:
+  syncfusion_flutter_datagrid:
+  syncfusion_flutter_gauges:  
   side_sheet:
   carousel_slider:
   
