@@ -1,5 +1,6 @@
-import 'package:dash_board/view/pages/main_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'view/pages/home/users_panel/teachers_panel/teachers_home.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         hoverColor: Colors.transparent,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MainScreen(),
+      home: const TeachersHomeScreen(),
     );
   }
 }

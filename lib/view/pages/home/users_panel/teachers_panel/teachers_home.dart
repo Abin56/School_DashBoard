@@ -1,7 +1,7 @@
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/constant/constant.dart';
 import 'package:dash_board/view/fonts/google_poppins.dart';
-import 'package:dash_board/view/pages/home/users_panel/teachers_panel/pages/dash_board/teachers_dashboard.dart';
+import 'package:dash_board/view/pages/home/users_panel/teachers_panel/pages/teacher_dash_board/teachers_dashboard.dart';
 import 'package:dash_board/view/pages/home/users_panel/teachers_panel/teachers_appbar/teachers_appbar.dart';
 import 'package:dash_board/view/pages/home/users_panel/admin_panel/drawer/drawer_pages.dart';
 import 'package:flutter/material.dart';
