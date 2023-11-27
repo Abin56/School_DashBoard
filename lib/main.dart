@@ -1,4 +1,4 @@
-import 'package:dash_board/view/pages/main_screen.dart';
+import 'package:dash_board/view/pages/home/login_page/login_page.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         hoverColor: Colors.transparent,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MainScreen(),
+      home: UserLoginPageScreen(),
     );
   }
 }
