@@ -1,5 +1,6 @@
 import 'package:dash_board/view/fonts/google_poppins.dart';
 import 'package:dash_board/view/pages/home/users_panel/admin_panel/admin_home.dart';
+import 'package:dash_board/view/pages/home/users_panel/parent_panel/parent_home.dart';
 import 'package:dash_board/view/pages/home/users_panel/student_panel/student_home.dart';
 import 'package:dash_board/view/pages/home/users_panel/teachers_panel/teachers_home.dart';
 import 'package:dash_board/view/style/glassmorphism.dart';
@@ -162,30 +163,36 @@ functionc(BuildContext context) {
                               ),
                             ),
                           ),
-                          GlassMorphism(
-                            start: 0.3,
-                            end: 0,
-                            child: SizedBox(
-                              height: 100,
-                              width: 150,
+                          GestureDetector(
+                            onTap: () => Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const ParentHomeScreen();
+                            })),
+                            child: GlassMorphism(
+                              start: 0.3,
+                              end: 0,
                               child: SizedBox(
-                                height: 180,
+                                height: 100,
                                 width: 150,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    SizedBox(
-                                        height: 40,
-                                        // width: 80,
-                                        child: Image.asset(
-                                            'assests/png/parents.png')),
-                                    GooglePoppinsWidgets(
-                                      text: "PARENT",
-                                      fontsize: 14,
-                                      fontWeight: FontWeight.w500,
-                                    )
-                                  ],
+                                child: SizedBox(
+                                  height: 180,
+                                  width: 150,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      SizedBox(
+                                          height: 40,
+                                          // width: 80,
+                                          child: Image.asset(
+                                              'assests/png/parents.png')),
+                                      GooglePoppinsWidgets(
+                                        text: "PARENT",
+                                        fontsize: 14,
+                                        fontWeight: FontWeight.w500,
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -204,6 +211,6 @@ functionc(BuildContext context) {
         ),
       );
     },
-    transitionDuration: const Duration(milliseconds: 2000),
+    transitionDuration: const Duration(milliseconds: 3000),
   );
 }
