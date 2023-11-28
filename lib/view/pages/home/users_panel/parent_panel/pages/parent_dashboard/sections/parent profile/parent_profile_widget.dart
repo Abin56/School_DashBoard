@@ -1,7 +1,7 @@
+import 'package:dash_board/view/fonts/text_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../../../colors/colors.dart';
-import '../../../../../../../../fonts/google_poppins.dart';
 
 class ParentProfileWidget extends StatelessWidget {
   const ParentProfileWidget({super.key});
@@ -30,12 +30,12 @@ class ParentProfileWidget extends StatelessWidget {
                                             top: 60, left: 10),
                                         child: Column(
                                           children: [
-                                            GooglePoppinsWidgets(
+                                            TextFontWidget(
                                               text: "Neena V",
                                               fontsize: 18,
-                                              fontWeight: FontWeight.bold,
+                                             fontWeight: FontWeight.bold,
                                             ),
-                                            GooglePoppinsWidgets(
+                                            TextFontWidget(
                                                 text: "Thursday ,Nov 23 2023",
                                                 fontsize: 10),
                                           ],
