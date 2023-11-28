@@ -3,8 +3,8 @@ import 'package:dash_board/view/pages/home/widgets/notice_display.dart';
 import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 
-class NoticeBoardContainer extends StatelessWidget {
-  const NoticeBoardContainer({
+class StdNoticeBoardContainer extends StatelessWidget {
+  const StdNoticeBoardContainer({
     super.key,
   });
 

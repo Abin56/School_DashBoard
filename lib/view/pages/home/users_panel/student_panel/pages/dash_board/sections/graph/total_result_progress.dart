@@ -12,7 +12,7 @@ class StudentTotalExamResultProgressChart extends StatefulWidget {
 }
 
 class StudentTotalExamResultProgressChartState extends State<StudentTotalExamResultProgressChart> {
-  void _openPage(Widget page) {
+  void openPage(Widget page) {
     Navigator.push(
       context,
       MaterialPageRoute(

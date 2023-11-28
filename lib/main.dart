@@ -1,4 +1,4 @@
-import 'package:dash_board/view/pages/home/login_page/login_page.dart';
+import 'package:dash_board/view/pages/home/users_panel/student_panel/student_home.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         hoverColor: Colors.transparent,
       ),
       debugShowCheckedModeBanner: false,
-      home: UserLoginPageScreen(),
+      home: const StudentHomeScreen(),
     );
   }
 }
