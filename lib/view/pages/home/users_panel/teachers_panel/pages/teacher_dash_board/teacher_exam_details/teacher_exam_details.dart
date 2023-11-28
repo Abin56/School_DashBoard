@@ -1,3 +1,4 @@
+import 'package:dash_board/responsive.dart';
 import 'package:flutter/material.dart';
 
 import 'teacher_class_exam_details_graph.dart';
@@ -9,7 +10,7 @@ class TeacherExamDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 300,
-      width: 600,
+
       decoration: BoxDecoration(boxShadow: const [
         BoxShadow(
           color: Color.fromARGB(10, 0, 0, 0),
@@ -64,7 +65,8 @@ class TeacherExamDetails extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Container(
                 height: 200,
-                width: 500,
+                width:
+                    ResponsiveWebSite.isTablet(context) ? double.infinity : 500,
                 color: Colors.white,
                 child: const TeacherClassExamDetailsGraph()),
           ),
