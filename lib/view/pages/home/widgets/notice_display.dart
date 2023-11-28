@@ -44,7 +44,7 @@ class NoticeDisplayContainer extends StatelessWidget {
           TextFontWidget(
             text: text1!,
             fontsize: 16,
-            fontWeight: FontWeight.w300,
+            fontWeight: FontWeight.w700,
           ),
           TextFontWidget(text: text2!, fontsize: 14),
           // Container(

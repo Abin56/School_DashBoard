@@ -1,6 +1,5 @@
 
 import 'package:dash_board/view/fonts/text_widget.dart';
-import 'package:dash_board/view/widgets/responsive/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -41,7 +40,7 @@ class SubjectWiseProgressBarStdState extends State<SubjectWiseProgressBarStd> {
                          LinearBarContainerWidget(trailing: Text("30%"), percent:  0.3,child: Text("social"),),
                          LinearBarContainerWidget(trailing: Text("40%"), percent: 0.4, child: Text("Science")),
                          LinearBarContainerWidget(trailing: Text("60%"), percent: 0.6, child: Text("Maths")),
-                          LinearBarContainerWidget(trailing: Text("80%"),percent: 0.8, child: Text("Malayalam")),
+                         LinearBarContainerWidget(trailing: Text("80%"),percent: 0.8, child: Text("Malayalam")),
                          LinearBarContainerWidget(trailing: Text("70%"), percent:  0.7,child: Text("English   "),),
                          LinearBarContainerWidget(trailing: Text("30%"), percent:  0.3,child: Text("social"),),
                          LinearBarContainerWidget(trailing: Text("40%"), percent: 0.4, child: Text("Science")),
@@ -79,7 +78,6 @@ class LinearBarContainerWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 15,right: 15,top: 5,bottom: 5),
       child: LinearPercentIndicator(
-        width:  ResponsiveWebSite.isMobile(context)?MediaQuery.of(context).size.width/2 :ResponsiveWebSite.isTablet(context)? MediaQuery.of(context).size.width/3.9:MediaQuery.of(context).size.width/6.9,
         animation: true,
         animationDuration: 1000,
         lineHeight: 20.0,

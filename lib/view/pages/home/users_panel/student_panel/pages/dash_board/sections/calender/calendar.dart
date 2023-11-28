@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 
-class CalenderViewContainer extends StatelessWidget {
-  const CalenderViewContainer({Key? key}) : super(key: key);
+class StdCalenderViewContainer extends StatelessWidget {
+  const StdCalenderViewContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
