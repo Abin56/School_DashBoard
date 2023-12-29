@@ -1,58 +1,76 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:dash_board/controller/admin/admin_controller.dart';
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/constant/constant.dart';
 import 'package:dash_board/view/fonts/text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TotalMembersSection extends StatelessWidget {
-  const TotalMembersSection({super.key});
+  TotalMembersSection({super.key});
+
+  final controller = Get.put(AdminController());
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          TotalMemberContainerWidget(
-              imageradius: 20,
-              imagepath: 'assests/png/students.png',
-              imageColor: const Color.fromARGB(255, 60, 184, 120),
-              color: const Color.fromARGB(255, 209, 243, 224),
-              count: 4020,
-              title: 'Students'),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: TotalMemberContainerWidget(
-                imageradius: 18,
-                imagepath: 'assests/png/teachers.png',
-                imageColor: const Color.fromARGB(255, 63, 122, 252),
-                color: const Color.fromARGB(255, 225, 241, 255),
-                count: 56,
-                title: 'Teachers'),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: TotalMemberContainerWidget(
-                imageradius: 18,
-                imagepath: 'assests/png/parents.png',
-                imageColor: const Color.fromARGB(255, 255, 160, 1),
-                color: const Color.fromARGB(255, 255, 242, 216),
-                count: 4020,
-                title: 'Parents'),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: TotalMemberContainerWidget(
-                imageradius: 18,
-                imagepath: 'assests/png/staff_png.png',
-                imageColor: const Color.fromARGB(255, 255, 5, 5),
-                color: const Color.fromARGB(255, 255, 234, 234),
-                count: 53,
-                title: 'Staffs'),
-          ),
-        ],
-      ),
+      child: FutureBuilder(
+          future: Future.wait([
+            controller.getSchoolAllStudentsCount(),
+            controller.getSchoolAllTeachersCount(),
+            controller.getSchoolAllParentsCount(),
+            controller.getSchoolAllStaffsCount()
+          ]),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+            return Row(
+              children: [
+                TotalMemberContainerWidget(
+                    imageradius: 20,
+                    imagepath: 'assests/png/students.png',
+                    imageColor: const Color.fromARGB(255, 60, 184, 120),
+                    color: const Color.fromARGB(255, 209, 243, 224),
+                    count: snapshot.data?[0] ?? 0,
+                    title: 'Students'),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: TotalMemberContainerWidget(
+                      imageradius: 18,
+                      imagepath: 'assests/png/teachers.png',
+                      imageColor: const Color.fromARGB(255, 63, 122, 252),
+                      color: const Color.fromARGB(255, 225, 241, 255),
+                      count: 56,
+                      title: 'Teachers'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: TotalMemberContainerWidget(
+                      imageradius: 18,
+                      imagepath: 'assests/png/parents.png',
+                      imageColor: const Color.fromARGB(255, 255, 160, 1),
+                      color: const Color.fromARGB(255, 255, 242, 216),
+                      count: 4020,
+                      title: 'Parents'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: TotalMemberContainerWidget(
+                      imageradius: 18,
+                      imagepath: 'assests/png/staff_png.png',
+                      imageColor: const Color.fromARGB(255, 255, 5, 5),
+                      color: const Color.fromARGB(255, 255, 234, 234),
+                      count: 53,
+                      title: 'Staffs'),
+                ),
+              ],
+            );
+          }),
     );
   }
 }
