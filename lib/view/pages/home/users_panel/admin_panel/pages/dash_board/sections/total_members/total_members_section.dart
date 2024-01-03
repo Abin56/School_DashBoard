@@ -21,7 +21,8 @@ class TotalMembersSection extends StatelessWidget {
             controller.getSchoolAllStudentsCount(),
             controller.getSchoolAllTeachersCount(),
             controller.getSchoolAllParentsCount(),
-            controller.getSchoolAllStaffsCount()
+            controller.getSchoolAllStaffsCount(),
+            controller.getSchoolAttendacne()
           ]),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
@@ -36,7 +37,7 @@ class TotalMembersSection extends StatelessWidget {
                     imagepath: 'assests/png/students.png',
                     imageColor: const Color.fromARGB(255, 60, 184, 120),
                     color: const Color.fromARGB(255, 209, 243, 224),
-                    count: snapshot.data?[0] ?? 0,
+                    count: (snapshot.data![0] as Map<String, dynamic>)["total"],
                     title: 'Students'),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
@@ -45,7 +46,7 @@ class TotalMembersSection extends StatelessWidget {
                       imagepath: 'assests/png/teachers.png',
                       imageColor: const Color.fromARGB(255, 63, 122, 252),
                       color: const Color.fromARGB(255, 225, 241, 255),
-                      count: 56,
+                      count: (snapshot.data?[1] as int),
                       title: 'Teachers'),
                 ),
                 Padding(
@@ -55,7 +56,7 @@ class TotalMembersSection extends StatelessWidget {
                       imagepath: 'assests/png/parents.png',
                       imageColor: const Color.fromARGB(255, 255, 160, 1),
                       color: const Color.fromARGB(255, 255, 242, 216),
-                      count: 4020,
+                      count: (snapshot.data?[2] as int),
                       title: 'Parents'),
                 ),
                 Padding(
@@ -65,7 +66,7 @@ class TotalMembersSection extends StatelessWidget {
                       imagepath: 'assests/png/staff_png.png',
                       imageColor: const Color.fromARGB(255, 255, 5, 5),
                       color: const Color.fromARGB(255, 255, 234, 234),
-                      count: 53,
+                      count: (snapshot.data?[3] as int),
                       title: 'Staffs'),
                 ),
               ],

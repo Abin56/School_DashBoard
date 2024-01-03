@@ -3,7 +3,7 @@ import 'package:dash_board/repository/admin/admin_repository.dart';
 class AdminController {
   final AdminRepository _repository = AdminRepository();
 
-  Future<int> getSchoolAllStudentsCount() async {
+  Future<Map<String, int>> getSchoolAllStudentsCount() async {
     return await _repository.getSchoolAllStudentsCount();
   }
 
@@ -17,5 +17,9 @@ class AdminController {
 
   Future<int> getSchoolAllStaffsCount() async {
     return await _repository.getSchoolAllStaffsCount();
+  }
+
+  Future<Map<String, int>> getSchoolAttendacne() async {
+    return await _repository.attendancePercentage();
   }
 }

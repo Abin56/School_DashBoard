@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class StudentsAttendenceCircleGraph extends StatefulWidget {
-  const StudentsAttendenceCircleGraph({super.key});
+  const StudentsAttendenceCircleGraph(
+      {super.key,
+      required this.present,
+      required this.absent,
+      required this.total});
+
+  final int present;
+  final int absent;
+  final int total;
 
   @override
   State<StudentsAttendenceCircleGraph> createState() =>
@@ -13,9 +21,12 @@ class _StudentsAttendenceCircleGraphState
     extends State<StudentsAttendenceCircleGraph> {
   @override
   Widget build(BuildContext context) {
+    final double percentage = widget.present * (100 / widget.total);
     final List<ChartData> chartData = [
-      ChartData('Present', 62, const Color.fromARGB(255, 65, 125, 252)),
-      ChartData('Absent', 38, const Color.fromARGB(255, 255, 0, 0))
+      ChartData('Present', widget.present.toDouble(),
+          const Color.fromARGB(255, 65, 125, 252)),
+      ChartData('Absent', widget.absent.toDouble(),
+          const Color.fromARGB(255, 255, 0, 0))
 
       // ChartData('Jack', 34, const Color.fromRGBO(228, 0, 124, 1)),
       // ChartData('Others', 52, const Color.fromRGBO(255, 189, 57, 1))
@@ -33,8 +44,8 @@ class _StudentsAttendenceCircleGraphState
                 color: const Color.fromRGBO(230, 230, 230, 1),
                 child: Container())),
         CircularChartAnnotation(
-            widget: const Text('62%',
-                style: TextStyle(color: Colors.black, fontSize: 25)))
+            widget: Text(percentage.roundToDouble().toString(),
+                style: const TextStyle(color: Colors.black, fontSize: 25)))
       ],
       series: <DoughnutSeries<ChartData, String>>[
         DoughnutSeries<ChartData, String>(

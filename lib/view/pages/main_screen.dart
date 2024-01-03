@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'home/users_panel/parent_panel/parent_home.dart';
 
-
-
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
