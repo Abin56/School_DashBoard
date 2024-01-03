@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:intl/intl.dart';
 
 class AdminRepository {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -100,6 +101,9 @@ class AdminRepository {
     int present = 0;
     int absent = 0;
 
+    String monthCollectionName = monthTimeStampConvertor();
+    String dateCollectionName = dateTimeStampConvertor();
+
     try {
       final schoolDoc = _firestore
           .collection('SchoolListCollection')
@@ -117,9 +121,9 @@ class AdminRepository {
             .collection('classes')
             .doc(classDoc.data()['docid'])
             .collection('Attendence')
-            .doc('September-2023')
-            .collection('September-2023')
-            .doc('05-09-2023')
+            .doc(monthCollectionName)
+            .collection(monthCollectionName)
+            .doc(dateCollectionName)
             .collection('Subjects');
 
         final allSubjects = await attendanceDoc.get();
@@ -149,5 +153,28 @@ class AdminRepository {
       log(e.toString(), name: 'AttendanceRepository - attendancePercentage');
       return {};
     }
+  }
+
+// eg :September-2023
+  String monthTimeStampConvertor() {
+    int timestamp = DateTime.now().microsecondsSinceEpoch;
+
+    DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(timestamp);
+
+    String formattedMonth = DateFormat('MMMM').format(dateTime);
+    String formattedYear = DateFormat('yyyy').format(dateTime);
+
+    return '$formattedMonth-$formattedYear';
+  }
+
+  //05-09-2023
+  String dateTimeStampConvertor() {
+    int timestamp = DateTime.now().microsecondsSinceEpoch;
+
+    DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(timestamp);
+
+    String formattedDate = DateFormat('dd-MM-yyyy').format(dateTime);
+
+    return formattedDate;
   }
 }

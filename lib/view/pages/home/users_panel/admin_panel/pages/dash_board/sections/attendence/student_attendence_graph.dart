@@ -21,7 +21,11 @@ class _StudentsAttendenceCircleGraphState
     extends State<StudentsAttendenceCircleGraph> {
   @override
   Widget build(BuildContext context) {
-    final double percentage = widget.present * (100 / widget.total);
+    double percentage = 0;
+    if (widget.total != 0) {
+      percentage = widget.present * (100 / widget.total);
+    }
+
     final List<ChartData> chartData = [
       ChartData('Present', widget.present.toDouble(),
           const Color.fromARGB(255, 65, 125, 252)),
