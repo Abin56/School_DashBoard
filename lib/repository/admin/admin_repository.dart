@@ -107,17 +107,17 @@ class AdminRepository {
     try {
       final schoolDoc = _firestore
           .collection('SchoolListCollection')
-          .doc('0OdOkV1YzEab2BuGRtv4q9qcyfU2');
-      final classesDoc = schoolDoc.collection('2024-June-2025-March');
+          .doc('cFIgPHgubMMuf5zRRqbAKeMVcKZ2');
+      final classesDoc = schoolDoc.collection('2023-June-2024-March');
 
       final allClass = await classesDoc
-          .doc('2024-June-2025-March')
+          .doc('2023-June-2024-March')
           .collection('classes')
           .get();
 
       for (var classDoc in allClass.docs) {
         final attendanceDoc = classesDoc
-            .doc('2024-June-2025-March')
+            .doc('2023-June-2024-March')
             .collection('classes')
             .doc(classDoc.data()['docid'])
             .collection('Attendence')
@@ -157,7 +157,7 @@ class AdminRepository {
 
 // eg :September-2023
   String monthTimeStampConvertor() {
-    int timestamp = DateTime.now().microsecondsSinceEpoch;
+    int timestamp = DateTime.now().millisecondsSinceEpoch;
 
     DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(timestamp);
 
@@ -169,7 +169,7 @@ class AdminRepository {
 
   //05-09-2023
   String dateTimeStampConvertor() {
-    int timestamp = DateTime.now().microsecondsSinceEpoch;
+    int timestamp = DateTime.now().millisecondsSinceEpoch;
 
     DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(timestamp);
 
