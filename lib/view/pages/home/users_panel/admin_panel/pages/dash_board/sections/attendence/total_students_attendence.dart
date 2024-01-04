@@ -114,6 +114,43 @@ class TotalStudentAttendanceContainer extends StatelessWidget {
                               )
                             ],
                           ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Container(
+                              width: 01,
+                              color: Colors.grey,
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Container(
+                                  height: 04,
+                                  width: 100,
+                                  color: const Color.fromARGB(255, 255, 251, 0)
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 15, top: 05),
+                                child: TextFontWidget(
+                                  text: 'Pending',
+                                  fontsize: 12.5,
+                                  color: Colors.black.withOpacity(0.8),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 06),
+                                child: TextFontWidget(
+                                  text: (snapshot.data?['absent'] ?? 0)
+                                      .toString(),
+                                  fontsize: 12,
+                                  color: Colors.black.withOpacity(0.5),
+                                ),
+                              )
+                            ],
+                          ),
                         ],
                       ),
                     ))
