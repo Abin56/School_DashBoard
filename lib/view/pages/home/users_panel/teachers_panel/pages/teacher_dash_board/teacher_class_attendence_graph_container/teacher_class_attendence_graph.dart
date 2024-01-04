@@ -30,7 +30,7 @@ class _TeacherClassAttendenceGraphState
     // ];
 
     final List<ChartData> data = widget.data.entries
-        .map((e) => ChartData(e.key, e.value['present']?.toDouble() ?? 0,
+        .map((e) => ChartData("${e.key} P", e.value['present']?.toDouble() ?? 0,
             e.value['total']?.toDouble() ?? 0))
         .toList();
     return SfCartesianChart(
