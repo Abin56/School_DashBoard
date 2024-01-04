@@ -13,7 +13,7 @@ class AdminRepository {
       int female = 0;
       final studentsCount = await _firestore
           .collection('SchoolListCollection')
-          .doc('0OdOkV1YzEab2BuGRtv4q9qcyfU2')
+          .doc('cFIgPHgubMMuf5zRRqbAKeMVcKZ2')
           .collection('AllStudents')
           .get();
 
@@ -41,7 +41,7 @@ class AdminRepository {
       int count = 0;
       final allClass = await _firestore
           .collection('SchoolListCollection')
-          .doc('0OdOkV1YzEab2BuGRtv4q9qcyfU2')
+          .doc('cFIgPHgubMMuf5zRRqbAKeMVcKZ2')
           .collection('2024-June-2025-March')
           .doc('2024-June-2025-March')
           .collection('classes')
@@ -49,7 +49,7 @@ class AdminRepository {
       for (var element in allClass.docs) {
         final students = await _firestore
             .collection('SchoolListCollection')
-            .doc('0OdOkV1YzEab2BuGRtv4q9qcyfU2')
+            .doc('cFIgPHgubMMuf5zRRqbAKeMVcKZ2')
             .collection('2024-June-2025-March')
             .doc('2024-June-2025-March')
             .collection('classes')
@@ -70,7 +70,7 @@ class AdminRepository {
     try {
       final studentsCount = await _firestore
           .collection('SchoolListCollection')
-          .doc('0OdOkV1YzEab2BuGRtv4q9qcyfU2')
+          .doc('cFIgPHgubMMuf5zRRqbAKeMVcKZ2')
           .collection('Teachers')
           .get();
       return studentsCount.docs.length;
@@ -85,7 +85,7 @@ class AdminRepository {
     try {
       final studentsCount = await _firestore
           .collection('SchoolListCollection')
-          .doc('0OdOkV1YzEab2BuGRtv4q9qcyfU2')
+          .doc('cFIgPHgubMMuf5zRRqbAKeMVcKZ2')
           .collection('Staffs')
           .get();
       return studentsCount.docs.length;
