@@ -11,20 +11,34 @@ class AdminRepository {
       Map<String, int> allStudentsData = {};
       int male = 0;
       int female = 0;
-      final studentsCount = await _firestore
+      final classCollection = await _firestore
           .collection('SchoolListCollection')
           .doc('cFIgPHgubMMuf5zRRqbAKeMVcKZ2')
-          .collection('AllStudents')
+          .collection('2023-June-2024-March')
+          .doc('2023-June-2024-March')
+          .collection('classes')
           .get();
 
-      for (var element in studentsCount.docs) {
-        if (element.data()["gender"] == "Female") {
-          female = female + 1;
-        }
-        if (element.data()["gender"] == "Male") {
-          male = male + 1;
+      for (var classElement in classCollection.docs) {
+        final studentCollection = await _firestore
+            .collection('SchoolListCollection')
+            .doc('cFIgPHgubMMuf5zRRqbAKeMVcKZ2')
+            .collection('2023-June-2024-March')
+            .doc('2023-June-2024-March')
+            .collection('classes')
+            .doc(classElement.data()['docid'])
+            .collection('Students')
+            .get();
+        for (var element in studentCollection.docs) {
+          if (element.data()["gender"] == "Female") {
+            female = female + 1;
+          }
+          if (element.data()["gender"] == "Male") {
+            male = male + 1;
+          }
         }
       }
+
       int total = male + female;
       allStudentsData = {"male": male, "female": female, "total": total};
 
@@ -42,16 +56,16 @@ class AdminRepository {
       final allClass = await _firestore
           .collection('SchoolListCollection')
           .doc('cFIgPHgubMMuf5zRRqbAKeMVcKZ2')
-          .collection('2024-June-2025-March')
-          .doc('2024-June-2025-March')
+          .collection('2023-June-2024-March')
+          .doc('2023-June-2024-March')
           .collection('classes')
           .get();
       for (var element in allClass.docs) {
         final students = await _firestore
             .collection('SchoolListCollection')
             .doc('cFIgPHgubMMuf5zRRqbAKeMVcKZ2')
-            .collection('2024-June-2025-March')
-            .doc('2024-June-2025-March')
+            .collection('2023-June-2024-March')
+            .doc('2023-June-2024-March')
             .collection('classes')
             .doc(element.data()["docid"])
             .collection('ParentCollection')
@@ -86,7 +100,7 @@ class AdminRepository {
       final studentsCount = await _firestore
           .collection('SchoolListCollection')
           .doc('cFIgPHgubMMuf5zRRqbAKeMVcKZ2')
-          .collection('Staffs')
+          .collection('NonTeachingStaffs')
           .get();
       return studentsCount.docs.length;
     } catch (e) {

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -32,7 +30,6 @@ class _TotalStudentCircleGraphState extends State<TotalStudentCircleGraph> {
 
   @override
   Widget build(BuildContext context) {
-    log("<<<<<<<<<<<<<<<< ${widget.femaleCount}");
     return SfCircularChart(tooltipBehavior: _tooltip, series: [
       DoughnutSeries<_ChartData, String>(
           innerRadius: '70%',
