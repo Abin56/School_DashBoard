@@ -101,7 +101,7 @@ class LinearBarContainerWidget extends StatelessWidget {
         percent: percent,
         //center: const Text("20.0%"),
         linearStrokeCap: LinearStrokeCap.butt,
-        progressColor: Colors.greenAccent,
+        progressColor: Colors.blueAccent,
       ),
     );
   }
