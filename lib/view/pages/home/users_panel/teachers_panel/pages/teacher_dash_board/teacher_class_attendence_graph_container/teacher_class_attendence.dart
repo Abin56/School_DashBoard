@@ -1,4 +1,6 @@
+import 'package:dash_board/controller/admin/teacher_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'teacher_class_attendence_graph.dart';
 
@@ -42,7 +44,19 @@ class TeacherClassAttendence extends StatelessWidget {
                 height: 200,
                 width: double.infinity,
                 color: Colors.white,
-                child: const TeacherClassAttendenceGraph()),
+                child: FutureBuilder(
+                    future: Get.find<TeacherController>()
+                        .getSchoolAllStudentsCount(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      return TeacherClassAttendenceGraph(
+                        data: snapshot.data ?? {},
+                      );
+                    })),
           ),
         ],
       ),

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class TeacherClassAttendenceGraph extends StatefulWidget {
-  const TeacherClassAttendenceGraph({super.key});
+  const TeacherClassAttendenceGraph({super.key, required this.data});
+
+  final Map<String, Map<String, int>> data;
 
   @override
   State<TeacherClassAttendenceGraph> createState() =>
@@ -14,18 +16,23 @@ class _TeacherClassAttendenceGraphState
   @override
   @override
   Widget build(BuildContext context) {
-    final List<ChartData> chartData = <ChartData>[
-      ChartData("I P", 40, 50),
-      ChartData("II P", 45, 50),
-      ChartData('III P', 36, 50),
-      ChartData('IV P', 20, 50),
-      ChartData('V P', 28, 50),
-      ChartData("VI P", 39, 50),
-      ChartData("VII P", 40, 50),
-      ChartData("VIII P", 45, 50),
-      ChartData('IX P', 36, 50),
-      ChartData('X P', 20, 50),
-    ];
+    // final List<ChartData> chartData = <ChartData>[
+    //   ChartData("I P", 40, 50),
+    //   ChartData("II P", 45, 50),
+    //   ChartData('III P', 36, 50),
+    //   ChartData('IV P', 20, 50),
+    //   ChartData('V P', 28, 50),
+    //   ChartData("VI P", 39, 50),
+    //   ChartData("VII P", 40, 50),
+    //   ChartData("VIII P", 45, 50),
+    //   ChartData('IX P', 36, 50),
+    //   ChartData('X P', 20, 50),
+    // ];
+
+    final List<ChartData> data = widget.data.entries
+        .map((e) => ChartData(e.key, e.value['present']?.toDouble() ?? 0,
+            e.value['total']?.toDouble() ?? 0))
+        .toList();
     return SfCartesianChart(
       primaryXAxis: CategoryAxis(),
       primaryYAxis: NumericAxis(
@@ -38,7 +45,7 @@ class _TeacherClassAttendenceGraphState
 
               // Renders the data label
               isVisible: true),
-          dataSource: chartData,
+          dataSource: data,
           markerSettings: const MarkerSettings(isVisible: true),
           xValueMapper: (ChartData data, _) => data.x,
           yValueMapper: (ChartData data, _) => data.y,
@@ -49,7 +56,7 @@ class _TeacherClassAttendenceGraphState
 
                 // Renders the data label
                 isVisible: true),
-            dataSource: chartData,
+            dataSource: data,
             markerSettings: const MarkerSettings(isVisible: true),
             xValueMapper: (ChartData data, _) => data.x,
             yValueMapper: (ChartData data, _) => data.y1,
