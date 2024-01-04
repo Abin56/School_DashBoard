@@ -28,51 +28,38 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  carousel_slider: null
+  cloud_firestore: null
+  cupertino_icons: ^1.0.2
+  data_table_2: null
+  dropdown_search: null
+  firebase_auth: null
+  firebase_core: null
+  firebase_database: null
+  firebase_storage: null
   flutter:
     sdk: flutter
-
-  flutter_screenutil:
-  intl:
-  fluttertoast:
-  flutter_svg: 
-  provider:
-  uuid:
-  google_fonts:
-  table_calendar:
-  firebase_auth:
-  firebase_core:
-  firebase_database:
-  firebase_storage:
-  cloud_firestore:
-  flutter_staggered_animations:
-  popover:
-  dropdown_search: 
-  percent_indicator: 
-  sidebar_drawer:
-  scroll_to_index:
-  syncfusion_flutter_charts: 
-  syncfusion_flutter_calendar:
-  syncfusion_flutter_datagrid:
-  syncfusion_flutter_gauges:  
-  side_sheet:
-  carousel_slider:
-  data_table_2: 
-  
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-
- 
-  
-  
- 
- 
-  
+  flutter_screenutil: null
+  flutter_staggered_animations: null
+  flutter_svg: null
+  fluttertoast: null
+  get: ^4.6.6
+  google_fonts: null
+  intl: null
+  percent_indicator: null
+  popover: null
+  provider: null
+  scroll_to_index: null
+  side_sheet: null
+  sidebar_drawer: null
+  syncfusion_flutter_calendar: null
+  syncfusion_flutter_charts: null
+  syncfusion_flutter_datagrid: null
+  syncfusion_flutter_gauges: null
+  table_calendar: null
+  uuid: null
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -80,10 +67,11 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -96,14 +84,10 @@ flutter:
   assets:
     - assests/images/
     - assests/png/
-
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

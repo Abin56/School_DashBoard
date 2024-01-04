@@ -1,9 +1,14 @@
+import 'dart:developer';
+
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class TotalStudentCircleGraph extends StatefulWidget {
-  const TotalStudentCircleGraph({super.key});
+  final double maleCount;
+  final double femaleCount;
+  const TotalStudentCircleGraph(
+      {super.key, required this.maleCount, required this.femaleCount});
 
   @override
   State<TotalStudentCircleGraph> createState() =>
@@ -16,8 +21,10 @@ class _TotalStudentCircleGraphState extends State<TotalStudentCircleGraph> {
   @override
   void initState() {
     data = [
-      _ChartData('Male', 200, const Color.fromARGB(255, 255, 166, 1)),
-      _ChartData('Female', 70, const Color.fromARGB(255, 15, 51, 255)),
+      _ChartData(
+          'Male', widget.maleCount, const Color.fromARGB(255, 255, 166, 1)),
+      _ChartData(
+          'Female', widget.femaleCount, const Color.fromARGB(255, 15, 51, 255)),
     ];
     _tooltip = TooltipBehavior(enable: true);
     super.initState();
@@ -25,6 +32,7 @@ class _TotalStudentCircleGraphState extends State<TotalStudentCircleGraph> {
 
   @override
   Widget build(BuildContext context) {
+    log("<<<<<<<<<<<<<<<< ${widget.femaleCount}");
     return SfCircularChart(tooltipBehavior: _tooltip, series: [
       DoughnutSeries<_ChartData, String>(
           innerRadius: '70%',

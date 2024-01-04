@@ -33,7 +33,7 @@ class AdminDashBoardSections extends StatelessWidget {
                 padding: EdgeInsets.only(
                     top: 25,
                     left: ResponsiveWebSite.isMobile(context) ? 05 : 10),
-                child: const TotalMembersSection(),
+                child: TotalMembersSection(),
 
                 ///.............. Total Members Section
               ),
