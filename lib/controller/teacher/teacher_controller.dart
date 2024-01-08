@@ -1,4 +1,4 @@
-import 'package:dash_board/repository/admin/teacher_repository.dart';
+import 'package:dash_board/repository/teacher/teacher_repository.dart';
 
 class TeacherController {
   final TeacherRepository _repository = TeacherRepository();

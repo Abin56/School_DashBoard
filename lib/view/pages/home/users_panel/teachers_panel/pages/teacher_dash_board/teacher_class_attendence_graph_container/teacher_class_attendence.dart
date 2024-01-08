@@ -1,4 +1,4 @@
-import 'package:dash_board/controller/admin/teacher_controller.dart';
+import 'package:dash_board/controller/teacher/teacher_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

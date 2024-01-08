@@ -1,10 +1,12 @@
+import 'package:dash_board/controller/student/student_controller.dart';
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/constant/constant.dart';
 import 'package:dash_board/view/fonts/google_poppins.dart';
-import 'package:dash_board/view/pages/home/users_panel/student_panel/pages/dash_board/student_dashboard.dart';
 import 'package:dash_board/view/pages/home/users_panel/admin_panel/drawer/drawer_pages.dart';
+import 'package:dash_board/view/pages/home/users_panel/student_panel/pages/dash_board/student_dashboard.dart';
 import 'package:dash_board/view/pages/home/users_panel/student_panel/student_appBar/student_appBar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sidebar_drawer/sidebar_drawer.dart';
 
 class StudentHomeScreen extends StatefulWidget {
@@ -15,6 +17,7 @@ class StudentHomeScreen extends StatefulWidget {
 }
 
 class _StudentHomeScreenState extends State<StudentHomeScreen> {
+  final StudentController studentController = Get.put(StudentController());
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {

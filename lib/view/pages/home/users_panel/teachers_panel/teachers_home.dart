@@ -1,4 +1,4 @@
-import 'package:dash_board/controller/admin/teacher_controller.dart';
+import 'package:dash_board/controller/teacher/teacher_controller.dart';
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/constant/constant.dart';
 import 'package:dash_board/view/fonts/google_poppins.dart';
