@@ -110,10 +110,10 @@ class StudentsubmissionDataSource extends DataGridSource {
     
     _studentsubmissionData = studentsubmissionData
         .map<DataGridRow>((e) => DataGridRow(cells: [
-              DataGridCell<int>(columnName: 'id', value: e.no),
-              DataGridCell<String>(columnName: 'name', value: e.homeworks,),
+              DataGridCell<int>(columnName: 'no', value: e.no),
+              DataGridCell<String>(columnName: 'homeworks', value: e.homeworks,),
               DataGridCell<String>(
-                  columnName: 'designation', value: e.subjects),
+                  columnName: 'subjects', value: e.subjects),
               DataGridCell<String>(columnName: 'status', value: e.status),
             ]))
         .toList();

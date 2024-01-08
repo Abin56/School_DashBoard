@@ -111,11 +111,11 @@ class StudentDataSource extends DataGridSource {
     
     _studentData = studentData
         .map<DataGridRow>((e) => DataGridRow(cells: [
-              DataGridCell<int>(columnName: 'id', value: e.no),
-              DataGridCell<String>(columnName: 'name', value: e.homeworks,),
+              DataGridCell<int>(columnName: 'no', value: e.no),
+              DataGridCell<String>(columnName: 'homeworks', value: e.homeworks,),
               DataGridCell<String>(
-                  columnName: 'designation', value: e.subjects),
-              DataGridCell<int>(columnName: 'salary', value: e.time),
+                  columnName: 'subjects', value: e.subjects),
+              DataGridCell<int>(columnName: 'time', value: e.time),
             ]))
         .toList();
   }

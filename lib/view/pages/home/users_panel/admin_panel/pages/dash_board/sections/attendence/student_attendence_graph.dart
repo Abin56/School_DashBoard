@@ -30,7 +30,9 @@ class _StudentsAttendenceCircleGraphState
       ChartData('Present', widget.present.toDouble(),
           const Color.fromARGB(255, 65, 125, 252)),
       ChartData('Absent', widget.absent.toDouble(),
-          const Color.fromARGB(255, 255, 0, 0))
+          const Color.fromARGB(255, 255, 0, 0)),
+            ChartData('Pending', widget.absent.toDouble(),
+          const Color.fromARGB(255, 255, 251, 0))
 
       // ChartData('Jack', 34, const Color.fromRGBO(228, 0, 124, 1)),
       // ChartData('Others', 52, const Color.fromRGBO(255, 189, 57, 1))
