@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dash_board/controller/student/student_controller.dart';
 import 'package:dash_board/view/fonts/text_widget.dart';
 import 'package:dash_board/view/pages/home/widgets/notice_display.dart';
@@ -54,9 +56,9 @@ class StdNoticeBoardContainer extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return NoticeDisplayContainer(
                               screensize: screensize,
-                              text: snapshot.data?[index].heading,
-                              //color: colorList[index],
-                              text1: snapshot.data?[index].subject,
+                              text: snapshot.data?[index].dateofoccation,
+                              color: colorList[Random().nextInt(3)],
+                              text1: snapshot.data?[index].heading,
                               text2: snapshot.data?[index].venue,
                             );
                           },

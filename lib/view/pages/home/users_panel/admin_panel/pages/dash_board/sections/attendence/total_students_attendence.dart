@@ -28,6 +28,9 @@ class TotalStudentAttendanceContainer extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
             }
+
+            final int pending = (snapshot.data?[1]["total"] ?? 0) -
+                (snapshot.data?[0]['total'] ?? 0);
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -45,6 +48,7 @@ class TotalStudentAttendanceContainer extends StatelessWidget {
                       absent: snapshot.data?[0]['absent'] ?? 0,
                       present: snapshot.data?[0]['present'] ?? 0,
                       total: snapshot.data?[0]['total'] ?? 10,
+                      pending: pending,
                     )),
                 SizedBox(
                     height: 50,
@@ -146,9 +150,7 @@ class TotalStudentAttendanceContainer extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(top: 06),
                                 child: TextFontWidget(
-                                  text: ((snapshot.data?[1]["total"] ?? 0) -
-                                          (snapshot.data?[0]['total'] ?? 0))
-                                      .toString(),
+                                  text: pending.toString(),
                                   fontsize: 12,
                                   color: Colors.black.withOpacity(0.5),
                                 ),

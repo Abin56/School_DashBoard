@@ -6,11 +6,12 @@ class StudentsAttendenceCircleGraph extends StatefulWidget {
       {super.key,
       required this.present,
       required this.absent,
-      required this.total});
+      required this.total, required this.pending});
 
   final int present;
   final int absent;
   final int total;
+  final int pending;
 
   @override
   State<StudentsAttendenceCircleGraph> createState() =>
@@ -31,7 +32,7 @@ class _StudentsAttendenceCircleGraphState
           const Color.fromARGB(255, 65, 125, 252)),
       ChartData('Absent', widget.absent.toDouble(),
           const Color.fromARGB(255, 255, 0, 0)),
-            ChartData('Pending', widget.absent.toDouble(),
+      ChartData('Pending', widget.pending.toDouble(),
           const Color.fromARGB(255, 255, 251, 0))
 
       // ChartData('Jack', 34, const Color.fromRGBO(228, 0, 124, 1)),
