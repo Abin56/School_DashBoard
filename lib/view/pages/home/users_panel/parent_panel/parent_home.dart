@@ -1,3 +1,4 @@
+import 'package:dash_board/controller/parent/parent_controller.dart';
 import 'package:dash_board/view/colors/colors.dart';
 import 'package:dash_board/view/constant/constant.dart';
 import 'package:dash_board/view/fonts/google_poppins.dart';
@@ -5,6 +6,7 @@ import 'package:dash_board/view/pages/home/users_panel/admin_panel/admin_appBar/
 import 'package:dash_board/view/pages/home/users_panel/admin_panel/drawer/drawer_pages.dart';
 import 'package:dash_board/view/pages/home/users_panel/parent_panel/pages/parent_dashboard/parent_dashboard.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sidebar_drawer/sidebar_drawer.dart';
 
 class ParentHomeScreen extends StatefulWidget {
@@ -15,6 +17,7 @@ class ParentHomeScreen extends StatefulWidget {
 }
 
 class _ParentHomeScreenState extends State<ParentHomeScreen> {
+  final ParentController parentController = Get.put(ParentController());
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
